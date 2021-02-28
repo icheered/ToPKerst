@@ -25,7 +25,7 @@ export default {
     },
     getQuestionReady() {
       let URL = "https://topkerst.icheered.nl/api/question/ready"
-      fetch(URL)
+      fetch(URL, {mode: 'no-cors'})
       .then((response) => response.json())
       .then((data) => {
         console.log(data)

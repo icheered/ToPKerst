@@ -70,7 +70,7 @@ export default {
     },
     getDoneWaiting() {
       let URL = "https://topkerst.icheered.nl/api/results/ready"
-      fetch(URL)
+      fetch(URL, {mode: 'no-cors'})
       .then((response) => response.json())
       .then((data) => {
         this.goToResults(data)

@@ -49,7 +49,7 @@ export default {
         },
     getResults() {
       let URL = "https://topkerst.icheered.nl/api/results"
-      fetch(URL)
+      fetch(URL, {mode: 'no-cors'})
       .then((response) => response.json())
       .then((data) => {
         console.log(data)
@@ -68,7 +68,7 @@ export default {
     },
     getQuestionReady() {
       let URL = "https://topkerst.icheered.nl/api/question/nextquestion"
-      fetch(URL)
+      fetch(URL, {mode: 'no-cors'})
       .then((response) => response.json())
       .then((data) => {
         console.log(data)

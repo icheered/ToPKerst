@@ -208,7 +208,7 @@ export default {
     mounted() {
         // Get list of people
         let URL = "https://topkerst.icheered.nl/api/people"
-        fetch(URL)
+        fetch(URL, {mode: 'no-cors'})
         .then((response) => response.json())
         .then((data) => {
             console.log(data)
@@ -229,7 +229,7 @@ export default {
 
         //Get Question
         let qURL = "https://topkerst.icheered.nl/api/question"
-        fetch(qURL)
+        fetch(qURL, {mode: 'no-cors'})
         .then((response) => response.json())
         .then((data) => {
             console.log(data)
