@@ -172,7 +172,7 @@ async def get_new_question(request: Request):
     for person in ret:
         peoplelist.append(person["name"])
     state_manager.people = peoplelist
-    return state_manager.question
+    return True
 
 @Admin_Router.get('/question/setready')
 async def set_question_ready(request: Request, ready: bool):
@@ -195,7 +195,7 @@ async def set_question_ready(request: Request, ready: bool):
     return ready
 
 @Admin_Router.get('/question/setnextready')
-async def set_question_ready(request: Request, ready: bool):
+async def set_next_question_ready(request: Request, ready: bool):
     """
     Set the flag of 'wait for next question'
     """
@@ -206,18 +206,18 @@ async def set_question_ready(request: Request, ready: bool):
     state_manager = request.app.state.dependencies["state_manager"]
     
     if ready:
-        state_manager.wait_for_next_question = ready
+        state_manager.wait_for_next_question = True
         state_manager.question_is_ready = False
         state_manager.results_is_ready = False
         state_manager.results = []
         state_manager.submission_array = []
     else:
-        state_manager.wait_for_next_question = ready
+        state_manager.wait_for_next_question = False
     
     return ready
 
 @Admin_Router.get('/results/setready')
-async def set_question_ready(request: Request, ready: bool):
+async def set_results_ready(request: Request, ready: bool):
     """
     Set the flag of "results are ready"
     """

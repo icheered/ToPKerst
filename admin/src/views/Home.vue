@@ -181,7 +181,7 @@ export default {
         postGoToLoadingUnready() {
             // Set GoToloading is NOT ready
             let URL = ""
-            URL = "https://topkerst.icheered.nl/api/admin/question/setnextready?ready=true"
+            URL = "https://topkerst.icheered.nl/api/admin/question/setnextready?ready=false"
             fetch(URL)
             .then((response) => response.json())
             .then((data) => {
