@@ -88,7 +88,7 @@ export default {
         getNextQuestion(){
             // Get new question
             let URL = ""
-            URL = "http://topkerst.icheered.nl:8009/admin/question/getnew"
+            URL = "http://topkerst.icheered.nl/api/admin/question/getnew"
             fetch(URL)
             .then((response) => response.json())
             .then((data) => {
@@ -101,7 +101,7 @@ export default {
         postQuestionReady() {
             // Set question is ready
             let URL = ""
-            URL = "http://topkerst.icheered.nl:8009/admin/question/setready?ready=true"
+            URL = "http://topkerst.icheered.nl/api/admin/question/setready?ready=true"
             fetch(URL)
             .then((response) => response.json())
             .then((data) => {
@@ -114,7 +114,7 @@ export default {
         postQuestionUnready() {
             // Set question is NOT ready
             let URL = ""
-            URL = "http://topkerst.icheered.nl:8009/admin/question/setready?ready=false"
+            URL = "http://topkerst.icheered.nl/api/admin/question/setready?ready=false"
             fetch(URL)
             .then((response) => response.json())
             .then((data) => {
@@ -127,7 +127,7 @@ export default {
         postResultsReady() {
             // Set results is ready
             let URL = ""
-            URL = "http://topkerst.icheered.nl:8009/admin/results/setready?ready=true"
+            URL = "http://topkerst.icheered.nl/api/admin/results/setready?ready=true"
             fetch(URL)
             .then((response) => response.json())
             .then((data) => {
@@ -140,7 +140,7 @@ export default {
         postResultsUnready() {
             // Set results is NOT ready
             let URL = ""
-            URL = "http://topkerst.icheered.nl:8009/admin/results/setready?ready=false"
+            URL = "http://topkerst.icheered.nl/api/admin/results/setready?ready=false"
             fetch(URL)
             .then((response) => response.json())
             .then((data) => {
@@ -154,7 +154,7 @@ export default {
         calculateResults() {
             // Set results is NOT ready
             let URL = ""
-            URL = "http://topkerst.icheered.nl:8009/admin/results/calculate"
+            URL = "http://topkerst.icheered.nl/api/admin/results/calculate"
             fetch(URL)
             .then((response) => response.json())
             .then((data) => {
@@ -167,7 +167,7 @@ export default {
         postGoToLoadingReady() {
             // Set GoToloading is ready
             let URL = ""
-            URL = "http://topkerst.icheered.nl:8009/admin/question/setnextready?ready=true"
+            URL = "http://topkerst.icheered.nl/api/admin/question/setnextready?ready=true"
             fetch(URL)
             .then((response) => response.json())
             .then((data) => {
@@ -181,7 +181,7 @@ export default {
         postGoToLoadingUnready() {
             // Set GoToloading is NOT ready
             let URL = ""
-            URL = "http://topkerst.icheered.nl:8009/admin/question/setnextready?ready=true"
+            URL = "http://topkerst.icheered.nl/api/admin/question/setnextready?ready=true"
             fetch(URL)
             .then((response) => response.json())
             .then((data) => {
@@ -194,7 +194,7 @@ export default {
         getData(){
             // Get question text
             let URL = ""
-            URL = "http://topkerst.icheered.nl:8009/question"
+            URL = "http://topkerst.icheered.nl/api/question"
             fetch(URL)
             .then((response) => response.json())
             .then((data) => {
@@ -205,7 +205,7 @@ export default {
             });
 
             // Get question ready state
-            URL = "http://topkerst.icheered.nl:8009/question/ready"
+            URL = "http://topkerst.icheered.nl/api/question/ready"
             fetch(URL)
             .then((response) => response.json())
             .then((data) => {
@@ -216,7 +216,7 @@ export default {
             });
 
             // Get resultsReady State
-            URL = "http://topkerst.icheered.nl:8009/results/ready"
+            URL = "http://topkerst.icheered.nl/api/results/ready"
             fetch(URL)
             .then((response) => response.json())
             .then((data) => {
@@ -227,7 +227,7 @@ export default {
             });
 
             // Get goToLoading State
-            URL = "http://topkerst.icheered.nl:8009/question/nextquestion"
+            URL = "http://topkerst.icheered.nl/api/question/nextquestion"
             fetch(URL)
             .then((response) => response.json())
             .then((data) => {

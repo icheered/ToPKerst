@@ -156,7 +156,7 @@ export default {
                 order: this.items
             }
             
-            var postURL = 'http://topkerst.icheered.nl:8009/results?result=%7B%22owner%22%3A%22'
+            var postURL = 'http://topkerst.icheered.nl/api/results?result=%7B%22owner%22%3A%22'
             postURL += personal_order.owner
             postURL += '%22%2C%22order%22%3A%5B%7B%22'
             for(var i = 0; i < personal_order.order.length; i++) {
@@ -207,7 +207,7 @@ export default {
     },
     mounted() {
         // Get list of people
-        let URL = "http://topkerst.icheered.nl:8009/people"
+        let URL = "http://topkerst.icheered.nl/api/people"
         fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -228,7 +228,7 @@ export default {
         });
 
         //Get Question
-        let qURL = "http://topkerst.icheered.nl:8009/question"
+        let qURL = "http://topkerst.icheered.nl/api/question"
         fetch(qURL)
         .then((response) => response.json())
         .then((data) => {

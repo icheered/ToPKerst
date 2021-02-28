@@ -69,7 +69,7 @@ export default {
       
     },
     getDoneWaiting() {
-      let URL = "http://topkerst.icheered.nl:8009/results/ready"
+      let URL = "http://topkerst.icheered.nl/api/results/ready"
       fetch(URL)
       .then((response) => response.json())
       .then((data) => {
