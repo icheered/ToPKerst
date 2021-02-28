@@ -48,7 +48,7 @@ export default {
           this.items = data
         },
     getResults() {
-      let URL = "http://127.0.0.1:8009/results"
+      let URL = "http://topkerst.icheered.nl:8009/results"
       fetch(URL)
       .then((response) => response.json())
       .then((data) => {
@@ -67,7 +67,7 @@ export default {
       });
     },
     getQuestionReady() {
-      let URL = "http://127.0.0.1:8009/question/nextquestion"
+      let URL = "http://topkerst.icheered.nl:8009/question/nextquestion"
       fetch(URL)
       .then((response) => response.json())
       .then((data) => {
