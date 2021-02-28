@@ -48,7 +48,7 @@ export default {
           this.items = data
         },
     getResults() {
-      let URL = "http://topkerst.icheered.nl/api/results"
+      let URL = "https://topkerst.icheered.nl/api/results"
       fetch(URL)
       .then((response) => response.json())
       .then((data) => {
@@ -67,7 +67,7 @@ export default {
       });
     },
     getQuestionReady() {
-      let URL = "http://topkerst.icheered.nl/api/question/nextquestion"
+      let URL = "https://topkerst.icheered.nl/api/question/nextquestion"
       fetch(URL)
       .then((response) => response.json())
       .then((data) => {

@@ -24,7 +24,7 @@ export default {
         this.$router.push('/selecting', () => {});
     },
     getQuestionReady() {
-      let URL = "http://topkerst.icheered.nl/api/question/ready"
+      let URL = "https://topkerst.icheered.nl/api/question/ready"
       fetch(URL)
       .then((response) => response.json())
       .then((data) => {
