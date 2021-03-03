@@ -56,7 +56,6 @@ export default {
             fetch(URL)
             .then((response) => response.json())
             .then((data) => {
-
                 console.log(data)
                 this.peopleArray = data
             })
@@ -69,7 +68,7 @@ export default {
             let URL = ""
             URL = "https://topkerst.icheered.nl/api/admin/name?nameID="+id
             //URL = "http://localhost:8009/admin/name?nameID="+id
-            fetch(URL, {method: 'DELETE', mode: 'no-cors'})
+            fetch(URL, {method: 'DELETE'})
             .then((response) => response.json())
             .then((data) => {
                 this.getPeople()
@@ -84,7 +83,7 @@ export default {
             let URL = ""
             //URL = "http://localhost:8009/admin/name?name="+name
             URL = "https://topkerst.icheered.nl/api/admin/name?name="+name
-            fetch(URL, {method: 'POST', mode:'no-cors'})
+            fetch(URL, {method: 'POST'})
             .then((response) => response.json())
             .then((data) => {
                 this.getPeople()

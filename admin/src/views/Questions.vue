@@ -53,9 +53,10 @@ export default {
             let URL = ""
             URL = "https://topkerst.icheered.nl/api/admin/question"
             //URL = "http://localhost:8009/admin/question"
-            fetch(URL, {mode: 'no-cors'})
+            fetch(URL)
             .then((response) => response.json())
             .then((data) => {
+                console.log(data)
                 this.questionsArray = data
             })
             .catch(function(error) {
@@ -68,7 +69,7 @@ export default {
             let URL = ""
             URL = "https://topkerst.icheered.nl/api/admin/question?questionID="+id
             //URL = "http://localhost:8009/admin/question?questionID="+id
-            fetch(URL, {method: 'DELETE', mode: 'no-cors'})
+            fetch(URL, {method: 'DELETE'})
             .then((response) => response.json())
             .then((data) => {
                 this.getQuestions()
