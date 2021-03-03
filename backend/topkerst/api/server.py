@@ -17,7 +17,7 @@ class Server:
 
         self.app = FastAPI(
             redoc_url=None,
-            docs_url="/",
+            docs_url="/"
         )
 
         deps = {}

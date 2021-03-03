@@ -65,7 +65,7 @@ async def add_name(request: Request, name: str):
         return False
 
 @Admin_Router.delete('/name')
-async def remove_name(request: Request, name: str):
+async def remove_name(request: Request, nameID: str):
     """
     Remove name from name table
     """
@@ -75,7 +75,7 @@ async def remove_name(request: Request, name: str):
     config = request.app.state.dependencies["config"]
     r = RethinkDB()
 
-    ret_cursor = r.table(config["PEOPLE_TABLE_NAME"]).filter(r.row["name"] == name).delete().run(db_conn)
+    ret_cursor = r.table(config["PEOPLE_TABLE_NAME"]).filter(r.row["id"] == nameID).delete().run(db_conn)
 
     if ret_cursor["deleted"] == 1:
         return True
@@ -130,7 +130,7 @@ async def add_question(request: Request, question: str):
         return False
 
 @Admin_Router.delete('/question')
-async def remove_question(request: Request, question: str):
+async def remove_question(request: Request, questionID: str):
     """
     Remove question from question table
     """
@@ -140,7 +140,7 @@ async def remove_question(request: Request, question: str):
     config = request.app.state.dependencies["config"]
     r = RethinkDB()
 
-    ret_cursor = r.table(config["QUESTIONS_TABLE_NAME"]).filter(r.row["question"] == question).delete().run(db_conn)
+    ret_cursor = r.table(config["QUESTIONS_TABLE_NAME"]).filter(r.row["id"] == questionID).delete().run(db_conn)
 
     if ret_cursor["deleted"] == 1:
         return True
