@@ -89,7 +89,7 @@ export default {
             // Get new question
             let URL = ""
             URL = "https://topkerst.icheered.nl/api/admin/question/getnew"
-            fetch(URL)
+            fetch(URL, {mode: "no-cors"})
             .then((response) => response.json())
             .then((data) => {
                 console.log(data)
@@ -102,7 +102,7 @@ export default {
             // Set question is ready
             let URL = ""
             URL = "https://topkerst.icheered.nl/api/admin/question/setready?ready=true"
-            fetch(URL)
+            fetch(URL, {mode: "no-cors"})
             .then((response) => response.json())
             .then((data) => {
                 console.log(data)
@@ -115,7 +115,7 @@ export default {
             // Set question is NOT ready
             let URL = ""
             URL = "https://topkerst.icheered.nl/api/admin/question/setready?ready=false"
-            fetch(URL)
+            fetch(URL, {mode: "no-cors"})
             .then((response) => response.json())
             .then((data) => {
                 console.log(data)
@@ -128,7 +128,7 @@ export default {
             // Set results is ready
             let URL = ""
             URL = "https://topkerst.icheered.nl/api/admin/results/setready?ready=true"
-            fetch(URL)
+            fetch(URL, {mode: "no-cors"})
             .then((response) => response.json())
             .then((data) => {
                 console.log(data)
@@ -155,7 +155,7 @@ export default {
             // Set results is NOT ready
             let URL = ""
             URL = "https://topkerst.icheered.nl/api/admin/results/calculate"
-            fetch(URL)
+            fetch(URL, {mode: "no-cors"})
             .then((response) => response.json())
             .then((data) => {
                 console.log(data)
@@ -168,7 +168,7 @@ export default {
             // Set GoToloading is ready
             let URL = ""
             URL = "https://topkerst.icheered.nl/api/admin/question/setnextready?ready=true"
-            fetch(URL)
+            fetch(URL, {mode: "no-cors"})
             .then((response) => response.json())
             .then((data) => {
                 console.log(data)
@@ -182,7 +182,7 @@ export default {
             // Set GoToloading is NOT ready
             let URL = ""
             URL = "https://topkerst.icheered.nl/api/admin/question/setnextready?ready=false"
-            fetch(URL)
+            fetch(URL, {mode: "no-cors"})
             .then((response) => response.json())
             .then((data) => {
                 console.log(data)
@@ -195,7 +195,7 @@ export default {
             // Get question text
             let URL = ""
             URL = "https://topkerst.icheered.nl/api/question"
-            fetch(URL)
+            fetch(URL, {mode: "no-cors"})
             .then((response) => response.json())
             .then((data) => {
                 this.setQuestionText(data)
@@ -206,7 +206,7 @@ export default {
 
             // Get question ready state
             URL = "https://topkerst.icheered.nl/api/question/ready"
-            fetch(URL)
+            fetch(URL, {mode: "no-cors"})
             .then((response) => response.json())
             .then((data) => {
                 this.setquestionReadyState(data)
@@ -217,7 +217,7 @@ export default {
 
             // Get resultsReady State
             URL = "https://topkerst.icheered.nl/api/results/ready"
-            fetch(URL)
+            fetch(URL, {mode: "no-cors"})
             .then((response) => response.json())
             .then((data) => {
                 this.setresultsReadyState(data)
@@ -228,7 +228,7 @@ export default {
 
             // Get goToLoading State
             URL = "https://topkerst.icheered.nl/api/question/nextquestion"
-            fetch(URL)
+            fetch(URL, {mode: "no-cors"})
             .then((response) => response.json())
             .then((data) => {
                 this.setgoToLoadingState(data)
