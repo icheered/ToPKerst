@@ -53,7 +53,7 @@ export default {
             let URL = ""
             URL = "https://topkerst.icheered.nl/api/admin/question"
             //URL = "http://localhost:8009/admin/question"
-            fetch(URL, {mode: "no-cors"})
+            fetch(URL, {mode: 'no-cors'})
             .then((response) => response.json())
             .then((data) => {
                 this.questionsArray = data
