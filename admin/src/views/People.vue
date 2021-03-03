@@ -69,7 +69,7 @@ export default {
             let URL = ""
             URL = "https://topkerst.icheered.nl/api/admin/name?nameID="+id
             //URL = "http://localhost:8009/admin/name?nameID="+id
-            fetch(URL, {method: 'DELETE'})
+            fetch(URL, {method: 'DELETE', mode: 'no-cors'})
             .then((response) => response.json())
             .then((data) => {
                 this.getPeople()
@@ -84,7 +84,7 @@ export default {
             let URL = ""
             //URL = "http://localhost:8009/admin/name?name="+name
             URL = "https://topkerst.icheered.nl/api/admin/name?name="+name
-            fetch(URL, {method: 'POST'})
+            fetch(URL, {method: 'POST', mode:'no-cors'})
             .then((response) => response.json())
             .then((data) => {
                 this.getPeople()

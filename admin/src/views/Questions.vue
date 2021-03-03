@@ -68,7 +68,7 @@ export default {
             let URL = ""
             URL = "https://topkerst.icheered.nl/api/admin/question?questionID="+id
             //URL = "http://localhost:8009/admin/question?questionID="+id
-            fetch(URL, {method: 'DELETE'})
+            fetch(URL, {method: 'DELETE', mode: 'no-cors'})
             .then((response) => response.json())
             .then((data) => {
                 this.getQuestions()
