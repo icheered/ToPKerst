@@ -1,6 +1,7 @@
 <template>
   <v-app>
     <v-main>
+      <TopNav/>
       <transition
         name="fade"
         mode="out-in"
@@ -13,7 +14,12 @@
 
 <script>
 
+import TopNav from '../src/components/TopNav'
+
 export default {
+  components: {
+    TopNav,
+  }
   }
 </script>
 
