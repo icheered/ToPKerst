@@ -96,3 +96,12 @@ class Parameters:
             help="Name of the table which stores the questions",
             default="questions",
         )
+        db_group.add_argument(
+            "--SUBMISSIONS_TABLE_NAME",
+            type=str,
+            help="Name of the table which stores the submissions",
+            default="submissions",
+        )
+
+
+        

@@ -15,6 +15,7 @@ Get results
 from fastapi import APIRouter, Request
 import asyncio
 
+import datetime
 import json
 import random
 import ast
@@ -134,6 +135,19 @@ async def post_submission(request: Request, result: str):
     if not already_exists:
         logger.info("Adding new sumission by "+str(new_entry["submitter"]))
         state_manager.submission_array.append(new_entry)
+
+
+    new_submission = {
+        "time": str(datetime.datetime.now()),
+        "question": state_manager.question,
+        "submission": new_entry
+    }
+
+    ret_cursor = r.table(config["SUBMISSIONS_TABLE_NAME"]).insert(new_submission).run(db_conn)
+    
+
+
+
 
     # Also set the people from the database to the current people selection
     

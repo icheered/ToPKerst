@@ -74,3 +74,9 @@ class DB_Handler:
         else:
             self.logger.info("Questions table already exists")
         
+        if self.config["SUBMISSIONS_TABLE_NAME"] not in tables:
+            self.logger.info("Submissions table doesn't exist yet. Creating...")
+            ret = self.r.db(self.config["DB_NAME"]).table_create(self.config["SUBMISSIONS_TABLE_NAME"]).run(self.conn)
+        else:
+            self.logger.info("Submissions table already exists")
+        

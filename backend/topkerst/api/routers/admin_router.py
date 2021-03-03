@@ -47,7 +47,7 @@ async def add_name(request: Request, name: str):
     r = RethinkDB()
 
     person = {
-        "name": name
+        "name": name,
     }
 
     # Check if the person doesn't already exist
@@ -297,3 +297,19 @@ async def get_results_array(request: Request):
     resultsarray = state_manager.submission_array
 
     return resultsarray
+
+
+@Admin_Router.get('/submission')
+async def get_submission_array(request: Request):
+    """
+    Get array of all submissions
+    """
+    logger = request.app.state.dependencies["logger"]
+    logger.info("Getting submission array")
+    db_conn = request.app.state.dependencies["db_conn"]
+    config = request.app.state.dependencies["config"]
+    r = RethinkDB()
+
+    ret_cursor = r.table(config["SUBMISSIONS_TABLE_NAME"]).run(db_conn)
+    ret = list(ret_cursor)
+    return ret
