@@ -6,9 +6,9 @@
       <v-row align="center" justify="center">
         <v-progress-circular size="64" indeterminate></v-progress-circular>
       </v-row>
-      <v-row align="center" justify="center">
+      <!--<v-row align="center" justify="center">
         <v-btn color="success" to="selecting">Go To Selecting</v-btn>
-      </v-row>
+      </v-row>-->
   </v-container>
 </template>
 
